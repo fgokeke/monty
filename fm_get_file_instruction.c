@@ -13,7 +13,7 @@ void get_file_instruction(void)
 	instruction_t f_instruction[] = {
 		{"push", &push}, /*{"mul", &mul},*/
 		/*{"pop", &pop}, {"rotl", &rotl},*/
-		/*{"pint", &pint}, {"rotr", &rotr},*/
+		{"pint", &pint}, /*{"rotr", &rotr},*/
 		/*{"swap", &swap}, {"stack", &stack},*/
 		/*{"nop", &nop}, {"queue", &queue},*/
 		/*{"add", &add}, {"pstr", &pstr},*/

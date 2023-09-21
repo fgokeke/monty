@@ -72,10 +72,11 @@ int is_numeric(char *str);
 void free_argument_file(void);
 void free_stack(stack_t *head);
 void free_head(void);
+void total_free_args(void);
 
 
 void push(stack_t **stack, unsigned int line_number);
-/*void pint(stack_t **stack, unsigned int line_number);*/
+void pint(stack_t **stack, unsigned int line_number);
 /*void pop(stack_t **stack, unsigned int line_number);*/
 void pall(stack_t **stack, unsigned int line_number);
 /*void swap(stack_t **stack, unsigned int line_number);*/
