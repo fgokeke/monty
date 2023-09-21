@@ -10,8 +10,8 @@ void execute_instruction(void)
 {
 	stack_t *stack_ptr = NULL;
 
-	if (argument_file->count_tokens != 0)
-	{
-		argument_file->file_instructions->f(&stack_ptr, argument_file->file_line_no);
-	}
+	if (argument_file->count_tokens == 0)
+		return;
+
+	argument_file->file_instructions->f(&stack_ptr, argument_file->file_line_no);
 }

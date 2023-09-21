@@ -10,16 +10,17 @@
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr;
+
+	if (argument_file->head == NULL)
+		return;
+
 	(void) line_number;
 	(void) stack;
 
-	if (argument_file->head != NULL)
+	ptr = argument_file->head;
+	while (ptr != NULL)
 	{
-		ptr = argument_file->head;
-		while (ptr != NULL)
-		{
-			printf("%d\n", ptr->n);
-			ptr = ptr->next;
-		}
+		printf("%d\n", ptr->n);
+		ptr = ptr->next;
 	}
 }
