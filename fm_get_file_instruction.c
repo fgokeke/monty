@@ -15,6 +15,8 @@ void get_file_instruction(void)
 		{"pint", &pint}, {"swap", &swap},
 		{"stack", &stack}, {"nop", &nop},
 		{"queue", &queue}, {"add", &add},
+		{"sub", &sub}, {"mul", &mul},
+		{"div", &_div}, {"mod", &mod},
 		{"pall", &pall}, {NULL, NULL}
 	};
 	if (argument_file->count_tokens == 0)
