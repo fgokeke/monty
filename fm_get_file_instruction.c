@@ -11,15 +11,11 @@ void get_file_instruction(void)
 	int idx = 0;
 
 	instruction_t f_instruction[] = {
-		{"push", &push}, /**{"mul", &mul},
-		*{"pop", &pop}, {"rotl", &rotl},1
-		*{"pint", &pint}, {"rotr", &rotr},
-		*{"swap", &swap}, {"stack", &stack},
-		*{"nop", &nop}, {"queue", &queue},
-		*{"add", &add}, {"pstr", &pstr},*/
-		{"pall", &pall}, /**{"pchar", &pchar},
-		*{"sub", &sub}, {"mod", &mod},
-		*{"div", &_div}, */{NULL, NULL}
+		{"push", &push}, {"pop", &pop},
+		{"pint", &pint}, {"swap", &swap},
+		{"stack", &stack}, {"nop", &nop},
+		{"queue", &queue}, {"add", &add},
+		{"pall", &pall}, {NULL, NULL}
 	};
 	if (argument_file->count_tokens == 0)
 	{
