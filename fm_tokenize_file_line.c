@@ -14,14 +14,18 @@ void tokenize_file_line(void)
 	strcpy(file_linecpy, argument_file->file_line);
 	argument_file->count_tokens = 0;
 	file_token = strtok(file_linecpy, file_line_delim);
-	do {
+	while (file_token)
+	{
 		argument_file->count_tokens++;
 		file_token = strtok(NULL, file_line_delim);
-	} while (file_token != NULL);
-	argument_file->file_tokens = malloc(sizeof(char) *
+	}
+	argument_file->file_tokens = malloc(sizeof(char *) *
 			(argument_file->count_tokens + 1));
 	strcpy(file_linecpy, argument_file->file_line);
-	do {
+	file_token = strtok(file_linecpy, file_line_delim);
+
+	while (file_token)
+	{
 		argument_file->file_tokens[idx] = malloc(sizeof(char) *
 				(strlen(file_token) + 1));
 		if (argument_file->file_tokens[idx] == NULL)
@@ -33,7 +37,7 @@ void tokenize_file_line(void)
 		strcpy(argument_file->file_tokens[idx], file_token);
 		file_token = strtok(NULL, file_line_delim);
 		idx += 1;
-	} while (file_token != NULL);
+	}
 	argument_file->file_tokens[idx] = NULL;
 	free(file_linecpy);
 }
