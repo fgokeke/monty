@@ -32,5 +32,5 @@ void push(stack_t **stack, unsigned int line_number)
 		argument_file->head->prev = *stack;
 	}
 	argument_file->head = *stack;
-	argument_file->stack_len++;
+	argument_file->stack_len += 1;
 }

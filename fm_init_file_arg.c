@@ -1,5 +1,6 @@
 #include "monty.h"
 
+arg_file *argument_file = NULL;
 /**
  * init_arg_file - to initialize arguments from file,
  * which is pointer to arg_file structure.
