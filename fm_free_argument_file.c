@@ -8,14 +8,14 @@
  */
 void free_stack(stack_t *head)
 {
-	if (head != NULL)
+	if (head == NULL)
+		return;
+
+	if (head->next != NULL)
 	{
-		if (head->next != NULL)
-		{
-			free_stack(head->next);
-		}
-		free(head);
+		free_stack(head->next);
 	}
+	free(head);
 }
 
 /**
@@ -38,19 +38,19 @@ void free_head(void)
  */
 void free_argument_file(void)
 {
-	if (argument_file != NULL)
+	if (argument_file == NULL)
+		return;
+
+	if (argument_file->file_instructions)
 	{
-		if (argument_file->file_instructions)
-		{
-			free(argument_file->file_instructions);
-			argument_file->file_instructions = NULL;
-		}
-		free_head();
-		if (argument_file->file_line)
-		{
-			free(argument_file->file_line);
-			argument_file->file_line = NULL;
-		}
-		free(argument_file);
+		free(argument_file->file_instructions);
+		argument_file->file_instructions = NULL;
 	}
+	free_head();
+	if (argument_file->file_line)
+	{
+		free(argument_file->file_line);
+		argument_file->file_line = NULL;
+	}
+	free(argument_file);
 }

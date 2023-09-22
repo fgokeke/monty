@@ -8,9 +8,9 @@
  */
 void check_arg(int ac)
 {
-	if (ac != 2)
-	{
-		dprintf(2, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+	if (ac == 2)
+		return;
+	
+	dprintf(2, "USAGE: monty file\n");
+	exit(EXIT_FAILURE);
 }
