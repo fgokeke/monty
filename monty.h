@@ -56,6 +56,7 @@ typedef struct arg_file_variables
 	instruction_t *file_instructions;
 	stack_t *head;
 	int stack_len;
+	int stack;
 } arg_file;
 
 extern arg_file *argument_file;
@@ -73,15 +74,16 @@ void free_argument_file(void);
 void free_stack(stack_t *head);
 void free_head(void);
 void total_free_args(void);
+void del_stack_node(void);
 
 
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
-/*void pop(stack_t **stack, unsigned int line_number);*/
+void pop(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-/*void swap(stack_t **stack, unsigned int line_number);*/
-/*void add(stack_t **stack, unsigned int line_number);*/
-/*void nop(stack_t **stack, unsigned int line_number);*/
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 /*void sub(stack_t **stack, unsigned int line_number);*/
 /*void _div(stack_t **stack, unsigned int line_number);*/
 /*void mul(stack_t **stack, unsigned int line_number);*/
@@ -90,6 +92,6 @@ void pall(stack_t **stack, unsigned int line_number);
 /*void pstr(stack_t **stack, unsigned int line_number);*/
 /*void rotl(stack_t **stack, unsigned int line_number);*/
 /*void rotr(stack_t **stack, unsigned int line_number);*/
-/*void stack(stack_t **stack, unsigned int line_number);*/
-/*void queue(stack_t **stack, unsigned int line_number);*/
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
 #endif
