@@ -11,9 +11,10 @@ void pop(stack_t **stack, unsigned int line_number)
 	(void) stack;
 	if (argument_file->head == NULL)
 	{
-		dprintf(2, "L%d: can't pint, stack empty\n", line_number);
+		dprintf(2, "L%d: can't pop stack empty\n", line_number);
 		total_free_args();
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", argument_file->head->n);
+	del_stack_node();
+	argument_file->stack_len--;
 }
